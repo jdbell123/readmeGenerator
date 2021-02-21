@@ -106,5 +106,3 @@ Licensed under the [MIT](./LICENSE) license.
 ## Links
 
 [GitHub Repo](https://github.com/jdbell123/readmeGenerator)
-
-[Website](https://jdbell123.github.io/readmeGenerator/)
