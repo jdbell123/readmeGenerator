@@ -1,8 +1,10 @@
+// Include fs and inquirer in the code from NPM.
 const fs = require("fs");
 const inquirer = require('inquirer');
 
 inquirer
     .prompt([
+        // Ask the user the input questions that will be used to build the README.md file.
         {
             type: 'input',
             message: 'What is your project title?',
@@ -70,6 +72,7 @@ inquirer
         },
     ])
     .then((response) => {
+        // Build the README.md file using the inputs from above that the user will enter. 
         const readmeText = `
 # ${response.projectTitle}\n
 ![GitHub License](https://img.shields.io/github/license/${response.gitHubUsername}/${response.gitHubRepoName})
@@ -111,8 +114,8 @@ ${response.testInstructions}\n
 Please check out my [GitHub](https://github.com/${response.gitHubUsername}) profile to see what else I've been working on!\n
 You can also reach me at the following email address if you have further questions: ${response.emailAddress}
 `;
-
-        fs.writeFile("test.md", readmeText, (err) =>
+        // Write the README.md file.
+        fs.writeFile("./generated/README.md", readmeText, (err) =>
             err ? console.error(err) : console.log('Readme File Created!'));
     }
     );
